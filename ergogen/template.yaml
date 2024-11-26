@@ -1,0 +1,111 @@
+units:
+  row_spacing: 1.2cy
+  column_spread: 1.12cx
+points:
+  zones:
+    matrix:
+      rows:
+        num.padding: row_spacing
+        top.padding: row_spacing
+        home.padding: row_spacing
+        buttom.padding: row_spacing
+        mod.padding: row_spacing
+      columns:
+        outer:
+          key:
+            stagger: 2
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        pinky:
+          key:
+            stagger: 2
+            spread: column_spread
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        ring:
+          key:
+            stagger: 5
+            spread: column_spread
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        middle:
+          key:
+            stagger: 3
+            spread: column_spread
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        index:
+          key:
+            stagger: -3
+            spread: column_spread
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        inner:
+          key:
+            stagger: -4
+            spread: column_spread
+            skip: true
+          rows:
+              num.skip: true
+              top.skip: false
+              home.skip: false
+              buttom.skip: false
+              mod.skip: false
+        add:
+          key:
+            stagger: 0
+            spread: column_spread
+            skip: true
+          rows:
+              num.skip: true
+              top.skip: true
+              home.skip: false
+              buttom.skip: false
+              mod.skip: true
+    thumb:
+      anchor:
+        shift: [45,5]
+      columns:
+        s1:
+          key:
+            stagger: 4
+        s2:
+          key:
+            spread: column_spread
+        s3:
+          key:
+            stagger: -4
+            spread: column_spread
+        s4:
+          key:
+            spread: 28
+            splay: -45
+            origin: [0, -2]
+        s5:
+          key:
+            spread: column_spread
+outlines:
+  left:
+    - where: true
+      what: rectangle
+      size: [cx+3, cy+3]
