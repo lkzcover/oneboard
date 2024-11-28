@@ -104,8 +104,60 @@ points:
         s5:
           key:
             spread: column_spread
+  key:
+    footprints:
+      choc:
+        type: choc
+        nets:
+          from: GND
+          to: "{{column_net}}"
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
 outlines:
-  left:
-    - where: true
-      what: rectangle
-      size: [cx+3, cy+3]
+  plate:
+    - what: rectangle
+      where: true
+      asym: source
+      size: 25
+      corner: 3
+    - what: rectangle
+      where: true
+      asym: source
+      size: 14
+      bound: false
+      operation: subtract
+  pcb_perimeter_raw:
+    - what: rectangle
+      where: true
+      asym: source
+      size: 18
+      corner: 1
+  pcb_perimeter:
+    - what: outline # keys
+      name: pcb_perimeter_raw
+
+pcbs:
+  oneboard:
+    outlines:
+      main:
+        outline: pcb_perimeter
+    footprints:
+      keys:
+        what: choc
+        where: true
+        params:
+          from: GND
+          to: "{{column_net}}"
+          keycaps: true
+          reverse: true
+          hotswap: true
+      promicro:
+        what: promicro
+        where:
+          ref: matrix_index_home
+          shift: [2.12u, 2.26u]
+          rotate: -90
+        params:
+          orientation: down
